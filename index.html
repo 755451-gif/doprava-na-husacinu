@@ -183,7 +183,7 @@
       cars = Object.entries(data).map(([id, car]) => ({
         id,
         driver: car.driver,
-        seats: Array.isArray(car.seats) ? car.seats : (car.seats || [])
+        seats: Array.isArray(car.seats) ? car.seats : (car.seats || []),
 		note: car.note || ""
       }));
       render();
