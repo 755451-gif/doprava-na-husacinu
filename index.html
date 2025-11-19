@@ -184,6 +184,7 @@
         id,
         driver: car.driver,
         seats: Array.isArray(car.seats) ? car.seats : (car.seats || [])
+		note: car.note || ""
       }));
       render();
     });
@@ -229,6 +230,14 @@
 
         div.appendChild(seatsDiv);
 
+		if (car.note) {
+ 		const noteP = document.createElement("p");
+  		noteP.style.fontSize = "12px";
+  		noteP.style.marginTop = "6px";
+  		noteP.innerHTML = `<strong>Poznámka:</strong> ${car.note}`;
+  		div.appendChild(noteP);
+		}
+		
         const hasFreeSeat = seats.includes("");
 
         const button = document.createElement("button");
